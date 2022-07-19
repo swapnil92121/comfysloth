@@ -1,0 +1,30 @@
+.footer {
+    flex-direction: row;
+    height: 5rem;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    background: var(--clr-black);
+    text-align: center;
+    font-size: 1rem;
+    color: var(--clr-grey-1);
+    line-height: 1.5;
+    
+}
+
+.footer h5 {
+    color: var(--clr-white);
+    margin: 0.1rem;
+    font-weight: 400;
+    text-transform: none;
+    line-height: 1.25;
+    font-size: 1rem;
+    letter-spacing: var(--spacing);
+    margin-block-start: 1.67em;
+    margin-block-end: 1.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    text-align: center;
+}

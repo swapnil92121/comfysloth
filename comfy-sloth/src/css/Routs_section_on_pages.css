@@ -1,0 +1,42 @@
+.Routs_section_on_pages {
+    background: var(--clr-primary-10);
+    width: 100%;
+    min-height: 20vh;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    color: var(--clr-primary-1);
+    flex-direction: row;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    font-size: 1rem;
+}
+.Routs_section_on_pages_links{
+    width: 95vw;
+    color: var(--clr-primary-1);
+    font-size: 1rem;
+}
+.Routs_section_on_pages_links h3{
+    font-size: 2rem;
+    letter-spacing: var(--spacing);
+    text-transform: capitalize;
+    margin-bottom: 0.75rem;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+.Routs_section_on_pages_links a {
+    color: var(--clr-primary-3);
+    padding: 0.5rem;
+    transition: var(--transition);
+    text-decoration: none;
+    cursor: pointer;
+    line-height: 1;
+    font-size: 2rem;
+    letter-spacing: var(--spacing);
+    text-transform: capitalize;
+    font-weight: bold;
+}
