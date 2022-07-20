@@ -60,7 +60,7 @@ export const Home_Page = () => {
                                 <h1>Design Your
                                     Comfort Zone</h1>
                                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto, at sed omnis corporis doloremque possimus velit! Repudiandae nisi odit, aperiam odio ducimus, obcaecati libero et quia tempora excepturi quis alias?</p>
-                                <Buttons value={'SHOP NOW'} />
+                                <Buttons link={'/products'} value={'SHOP NOW'} />
                             </div>
                             <div className="col" id='col_2'>
                                 <img className='Home_page_block_1_container_col_2_img_1' src={hero_bcg_a876f19f} />

@@ -34,7 +34,7 @@ export const Featured_Products = ({ All_Product }) => {
      </div>
     }
 
-    <Buttons value={'all products'} />
+    <Buttons link={'/products'} value={'all products'} />
 
    </div>
   </>
