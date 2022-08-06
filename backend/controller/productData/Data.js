@@ -1,5 +1,5 @@
-const comfyslothData = require('../db/model/data')
-const comfysloth_Single_Data = require('../db/model/singleProduct')
+const comfyslothData = require('../../db/model/data')
+const comfysloth_Single_Data = require('../../db/model/singleProduct')
 
 
 

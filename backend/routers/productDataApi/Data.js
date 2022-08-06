@@ -1,5 +1,5 @@
 const express = require('express')
-const { Data, singleData } = require('../controller/Data')
+const { Data, singleData } = require('../../controller/productData/Data')
 const router = express.Router()
 
 router.get('/data', Data)
