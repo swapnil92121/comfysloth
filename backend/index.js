@@ -14,14 +14,18 @@ app.use(cors())
 app.use(expres.json())
 //product api
 app.use('/comfysloth/api', require('./routers/productDataApi/Data'))
-//auth api
+//user auth api
 app.use('/comfysloth/api/auth', require('./routers/authentication'))
-//admin auth api
-app.use('/comfysloth/api/auth/admin',require('./routers/admin'))
 //user authorisation middleware
 app.use('/comfysloth/api/user/authorisation',userAuthorisation, require('./routers/authorisation/userAuthorisation'))
+//admin auth api
+app.use('/comfysloth/api/auth/admin',require('./routers/admin/adminAuth'))
 //admin authorisation middleware
 app.use('/comfysloth/api/admin/authorisation',adminAuthorisation,require('./routers/authorisation/adminAuthorisation'))
+//admin product apis
+app.use('/comfysloth/api/admin',adminAuthorisation,require('./routers/admin/admin_product_update'))
+
+
 
 
 

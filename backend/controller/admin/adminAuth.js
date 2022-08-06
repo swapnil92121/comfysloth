@@ -1,5 +1,5 @@
-const auth = require('../db/model/authentication')
-const { decript_Password, Token } = require('./logical_function')
+const auth = require('../../db/model/authentication')
+const { decript_Password, Token } = require('../logical_function')
 
 
 const login = async (req, res) => {
