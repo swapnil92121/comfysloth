@@ -3,18 +3,25 @@ const expres = require('express')
 const app = expres()
 const connectivity = require('./db/connectivity')
 require('dotenv').config()
-const {authorisation}=require('./middleware/authorisation')
+const {userAuthorisation}=require('./middleware/userAuthorisation')
+const {adminAuthorisation}=require('./middleware/adminAuthorisation')
 const cors=require('cors')
 
 
 
-//middlewear
+//routes
 app.use(cors())
 app.use(expres.json())
+//product api
 app.use('/comfysloth/api', require('./routers/productDataApi/Data'))
+//auth api
 app.use('/comfysloth/api/auth', require('./routers/authentication'))
+//admin auth api
 app.use('/comfysloth/api/auth/admin',require('./routers/admin'))
-app.use('/comfysloth/api/authorisation',authorisation, require('./routers/authorisation'))
+//user authorisation middleware
+app.use('/comfysloth/api/user/authorisation',userAuthorisation, require('./routers/authorisation/userAuthorisation'))
+//admin authorisation middleware
+app.use('/comfysloth/api/admin/authorisation',adminAuthorisation,require('./routers/authorisation/adminAuthorisation'))
 
 
 
