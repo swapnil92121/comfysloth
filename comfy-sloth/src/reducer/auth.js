@@ -6,7 +6,7 @@ import axios from 'axios'
 //async fetch
 export const register = createAsyncThunk('register', async ({ name, email, password }) => {
  let payload = null
- await axios.post(`http://localhost:4000/comfysloth/api/auth/register`, { name, email, password }).then((res) => {
+ await axios.post(`https://comfysloth.herokuapp.com/comfysloth/api/auth/register`, { name, email, password }).then((res) => {
   payload = res
  }).catch((err) => {
   payload = err
@@ -17,7 +17,7 @@ export const register = createAsyncThunk('register', async ({ name, email, passw
 
 export const Auth = createAsyncThunk('auth', async () => {
  let payload = null
- await axios.get(`http://localhost:4000/comfysloth/api/authorisation`, {
+ await axios.get(`https://comfysloth.herokuapp.com/comfysloth/api/authorisation`, {
   headers: {
    'token': localStorage.getItem('token')
   }
@@ -32,7 +32,7 @@ export const Auth = createAsyncThunk('auth', async () => {
 
 export const login = createAsyncThunk('login', async ({ email, password }) => {
  let payload = null
- await axios.post(`http://localhost:4000/comfysloth/api/auth/login`, { email, password }).then((res) => {
+ await axios.post(`https://comfysloth.herokuapp.com/comfysloth/api/auth/login`, { email, password }).then((res) => {
   payload = res
  }).catch((err) => {
   payload = err
@@ -80,6 +80,7 @@ const slice = createSlice({
     state.username=payload.data.name
     localStorage.setItem('token', payload.data.token)
    } else {
+    console.log(payload.response)
     state.registerStatus = payload.response.data.error.errors.email.message
     state.auth = false
    }

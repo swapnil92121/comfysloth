@@ -8,8 +8,8 @@ const encript_Password=async (password)=>{
  return encriptpassword
 }
 
-const Token=async (id,name)=>{
- return jwt.sign({id,name},process.env.secret)
+const Token=async (id,name,email)=>{
+ return jwt.sign({id,name,email},process.env.secret)
 }
 
 const decript_Password=(password,hash_password)=>{

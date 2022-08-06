@@ -2,10 +2,10 @@
 
 //authorisation
 const authorisation = (req, res) => {
- const {id,name}=req.user
+ const {id,name,email}=req.user
  res.status(200).json({
   status: 'auth',
-  id,name
+  id,name,email
  })
 }
 

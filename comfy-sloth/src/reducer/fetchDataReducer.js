@@ -5,7 +5,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 export const AllProduct = createAsyncThunk(
     'fetching/AllPreoduct',
     async () => {
-        const data = await (await fetch('http://localhost:4000/comfysloth/api/data')).json()
+        const data = await (await fetch('https://comfysloth.herokuapp.com/comfysloth/api/data')).json()
         return data
     }
 
@@ -13,7 +13,7 @@ export const AllProduct = createAsyncThunk(
 
 export const singleProduct = createAsyncThunk(
     'fetching/single_product', async (id) => {
-        const data = await (await fetch(`http://localhost:4000/comfysloth/api/single/data/${id}`)).json()
+        const data = await (await fetch(`https://comfysloth.herokuapp.com/comfysloth/api/single/data/${id}`)).json()
         return data
     }
 )

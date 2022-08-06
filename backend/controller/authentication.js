@@ -14,10 +14,10 @@ const login = async (req, res) => {
   if (data) {
    const decript_password = await decript_Password(password, data.password)
    if (decript_password) {
-    const token = await Token(data._id,data.name)
+    const token = await Token(data._id,data.name,data.email)
     if (token) {
      res.status(200).json({
-      userid: data._id, token,name:data.name
+      userid: data._id, token,name:data.name,email:data.email
      })
     }
    } else {
@@ -67,10 +67,10 @@ const register = async (req, res) => {
   if (encript_password) {
    const data = await auth.create({ name, email, password: encript_password })
    if (data) {
-    const token = await Token(data._id,data.name)
+    const token = await Token(data._id,data.name,data.email)
     if (token) {
      res.status(200).json({
-      userid: data._id, token,name:data.name
+      userid: data._id, token,name:data.name,email:data.email
      })
     }
    }
