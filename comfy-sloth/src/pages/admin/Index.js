@@ -12,12 +12,12 @@ export const AdminPage = () => {
     const navigation=useNavigate()
     const dispatch=useDispatch()
 
-    useEffect(() => {
-        dispatch(adminPageAuth())
-        if (adminAuth) {
-            navigation('/admin/page')
-        }
-    })
+    // useEffect(() => {
+    //     dispatch(adminPageAuth())
+    //     if (adminAuth) {
+    //         navigation('/admin/page')
+    //     }
+    // })
 
     return (
         <>

@@ -1,0 +1,31 @@
+.AdminDashbord {
+    display: flex;
+}
+
+.AdminLeftComponent {
+    width: 25%;
+    border: 1px solid black;
+    height: 67vh;
+}
+
+.AdminLeftComponent ul {
+    margin-top: 20%;
+}
+
+.AdminLeftComponent ul li {
+    list-style: none;
+    margin: 30%;
+    border-color: var(--clr-grey-5);
+    text-transform: capitalize;
+    letter-spacing: var(--spacing);
+    color: var(--clr-grey-5);
+    font-weight: 500;
+    width: 45%;
+    transition: all;
+    transition-duration: 200ms;
+    position: relative;
+    text-align: center;
+}
+.AdminLeftComponent ul li:hover{
+    transform: scale(1.2);
+}

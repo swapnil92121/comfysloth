@@ -1,7 +1,9 @@
-export const AdminRightComponent=()=>{
-    return(
+export const AdminRightComponent = () => {
+    return (
         <>
-            <h1>AdminRightComponent</h1>
+            <div className="AdminRightComponent">
+                <h1>AdminRightComponent</h1>
+            </div>
         </>
     )
 }

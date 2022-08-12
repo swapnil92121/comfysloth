@@ -17,7 +17,6 @@ const login = async (req, res) => {
             res.status(200).json({
                 status: 'login',
                 token
-
             })
         } else {
             res.status(400).json({

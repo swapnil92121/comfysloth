@@ -1,7 +1,15 @@
-export const AdminLeftComponent=()=>{
-    return(
+export const AdminLeftComponent = () => {
+    return (
         <>
-            <h1>AdminLeftComponent</h1>
+            <div className="AdminLeftComponent">
+                <ul>
+                    <li onClick={()=>{
+                        
+                    }}>Profile</li>
+                    <li>All Product</li>
+                    <li>Logout</li>
+                </ul>
+            </div>
         </>
     )
 }

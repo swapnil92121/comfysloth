@@ -12,10 +12,13 @@ import { App } from "./App";
 const store = configureStore({
   reducer: {
     fetchData: fetchDataReducer,
-    auth:authReducer,
-    admin:adminReducer
+    auth: authReducer,
+    admin: adminReducer
   },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware()
+  middleware: getDefaultMiddleware =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    })
 })
 
 
