@@ -90,7 +90,7 @@ export const Register = () => {
 
 
 
-         {registerStatus && (registerStatus == 'success' ?
+         {registerStatus && (registerStatus === 'success' ?
           <Alert style={{ marginTop: '2%' }} severity="success">{registerStatus}!</Alert> :
           <Alert style={{ marginTop: '2%' }} severity="error">{registerStatus}!</Alert>)}
 

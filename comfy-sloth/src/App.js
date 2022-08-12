@@ -13,6 +13,8 @@ import { Register } from './pages/auth/Register'
 import { Checkout } from './pages/Checkout'
 import { Error } from './pages/Error'
 import { Auth } from './reducer/auth'
+import { LoginAdmin } from './pages/admin/Login'
+import { AdminPage } from './pages/admin/Index'
 
 
 
@@ -41,7 +43,13 @@ export const App = () => {
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
           {auth && <Route path='/checkout' element={auth && <Checkout />} />}
-          <Route path='*' element={<Error/>} />
+
+          {/* admin */}
+          <Route path='/admin/login' element={<LoginAdmin />} />
+          <Route path='/admin/page' element={<AdminPage/>} />
+
+
+          <Route path='*' element={<Error />} />
         </Routes>
         <Footer />
       </BrowserRouter>
