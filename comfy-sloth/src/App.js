@@ -48,9 +48,9 @@ export const App = () => {
 
           {/* admin */}
           <Route path='/admin/login' element={<LoginAdmin />} />
-          <Route path='/admin/page' element={<AdminPage />}>
-            <Route path='/admin/page/adminprofile' element={<AdminProfile />} />
-            <Route path='/admin/page/adminallproduct' element={<AdminAllProduct />} />
+          <Route exact path='/admin/page' element={<AdminPage />}>
+            <Route exact path='/admin/page/adminprofile' element={<AdminProfile />} />
+            <Route exact path='/admin/page/adminallproduct' element={<AdminAllProduct />} />
           </Route>
 
 
