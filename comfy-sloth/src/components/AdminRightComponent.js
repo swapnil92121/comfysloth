@@ -1,8 +1,11 @@
+import {Outlet} from 'react-router-dom'
+
+
 export const AdminRightComponent = () => {
     return (
         <>
             <div className="AdminRightComponent">
-                <h1>AdminRightComponent</h1>
+                <Outlet/>
             </div>
         </>
     )

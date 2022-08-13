@@ -14,7 +14,9 @@ import { Checkout } from './pages/Checkout'
 import { Error } from './pages/Error'
 import { Auth } from './reducer/auth'
 import { LoginAdmin } from './pages/admin/Login'
-import { AdminPage } from './pages/admin/Index'
+import { AdminPage } from './pages/admin/adminPage/Index'
+import { AdminProfile } from './pages/admin/adminPage/AdminProfile'
+import { AdminAllProduct } from './pages/admin/adminPage/AdminAllProduct'
 
 
 
@@ -46,7 +48,10 @@ export const App = () => {
 
           {/* admin */}
           <Route path='/admin/login' element={<LoginAdmin />} />
-          <Route path='/admin/page' element={<AdminPage/>} />
+          <Route path='/admin/page' element={<AdminPage />}>
+            <Route path='/admin/page/adminprofile' element={<AdminProfile />} />
+            <Route path='/admin/page/adminallproduct' element={<AdminAllProduct />} />
+          </Route>
 
 
           <Route path='*' element={<Error />} />

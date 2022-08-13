@@ -3,13 +3,12 @@
 }
 
 .AdminLeftComponent {
-    width: 25%;
-    border: 1px solid black;
+    width: 20%;
     height: 67vh;
 }
 
 .AdminLeftComponent ul {
-    margin-top: 20%;
+    margin-top: 50%;
 }
 
 .AdminLeftComponent ul li {
@@ -20,11 +19,12 @@
     letter-spacing: var(--spacing);
     color: var(--clr-grey-5);
     font-weight: 500;
-    width: 45%;
+    width: 60%;
     transition: all;
     transition-duration: 200ms;
     position: relative;
-    text-align: center;
+    text-align: left;
+    cursor: pointer;
 }
 .AdminLeftComponent ul li:hover{
     transform: scale(1.2);
