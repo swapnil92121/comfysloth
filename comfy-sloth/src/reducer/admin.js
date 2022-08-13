@@ -29,9 +29,13 @@ export const adminPageAuth = createAsyncThunk('adminPageAuth', async () => {
 })
 
 
+
+
+
 const initialState = {
     adminAuth: false,
-    adminAuthStatus: false
+    adminAuthStatus: false,
+    adminInfo:{id:null,email:null}
 }
 
 const slice = createSlice({
@@ -51,6 +55,7 @@ const slice = createSlice({
                 state.adminAuth = true
                 state.adminAuthStatus = 'success'
                 localStorage.setItem('token', payload.data.token)
+                console.log(payload)
             } else {
                 state.adminAuth = false
                 state.adminAuthStatus = payload.response.data.status

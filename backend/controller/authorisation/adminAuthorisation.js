@@ -1,7 +1,7 @@
 const adminAuthorisation=(req,res)=>{
-    const {name,email}=req.adminData
+    const {id,email}=req.adminData
     res.status(200).json({
-        name,email
+        id,email
     })
 }
 

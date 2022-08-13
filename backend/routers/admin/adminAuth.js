@@ -1,12 +1,14 @@
 const express=require('express')
 const router=express.Router()
-const {login} =require('../../controller/admin/adminAuth')
+const {login,userUpdate} =require('../../controller/admin/adminAuth')
 
 
 
 //api
 
 router.post('/login',login)
+
+router.put('/user/update',userUpdate)
 
 
 
