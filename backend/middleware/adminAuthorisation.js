@@ -5,11 +5,15 @@ const adminAuthorisation = async (req, res, next) => {
     if (!token) {
         res.status(400).json({ status: 'not authorize' })
     } else {
-        const responce = await jwt.verify(token, process.env.secret)
-        if (responce) {
-            req.adminData = responce
-            next()
-        } else {
+        try {
+            const responce = await jwt.verify(token, process.env.secret)
+            if (responce) {
+                req.adminData = responce
+                next()
+            } else {
+                res.status(400).json({ status: 'not authorize' })
+            }
+        } catch {
             res.status(400).json({ status: 'not authorize' })
         }
     }
