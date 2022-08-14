@@ -55,7 +55,8 @@ const slice = createSlice({
                 state.adminAuth = true
                 state.adminAuthStatus = 'success'
                 localStorage.setItem('token', payload.data.token)
-                console.log(payload)
+                state.adminInfo={email:payload.data.email,id:payload.data.id}
+                console.log(state.adminInfo)
             } else {
                 state.adminAuth = false
                 state.adminAuthStatus = payload.response.data.status

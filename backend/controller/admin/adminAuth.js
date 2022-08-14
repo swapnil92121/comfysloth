@@ -10,6 +10,7 @@ const login = async (req, res) => {
         })
     }
     const data = await auth.findOne({ email })
+    console.log(data)
     if (data) {
         const password_check = await decript_Password(password, data.password)
         if (password_check) {
