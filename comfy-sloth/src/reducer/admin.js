@@ -51,12 +51,12 @@ const slice = createSlice({
         //admin login
         [adminLogin.fulfilled]: (state, action) => {
             let payload = action.payload
+            console.log(payload)
             if (payload.status === 200) {
                 state.adminAuth = true
                 state.adminAuthStatus = 'success'
                 localStorage.setItem('token', payload.data.token)
                 state.adminInfo={email:payload.data.email,id:payload.data.id}
-                console.log(state.adminInfo)
             } else {
                 state.adminAuth = false
                 state.adminAuthStatus = payload.response.data.status

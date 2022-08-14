@@ -4,13 +4,13 @@ const { decript_Password, Token, encript_Password } = require('../logical_functi
 
 const login = async (req, res) => {
     const { email, password } = req.body
+    console.log(email,password)
     if (!email || !password) {
         res.status(400).json({
             status: 'Enter all the detail'
         })
     }
     const data = await auth.findOne({ email })
-    console.log(data)
     if (data) {
         const password_check = await decript_Password(password, data.password)
         if (password_check) {
