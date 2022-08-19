@@ -16,7 +16,7 @@ const login = async (req, res) => {
             const token = await Token(data._id, data.name, data.email)
             res.status(200).json({
                 status: 'login',
-                id:data._id,
+                id: data._id,
                 email,
                 token
             })
@@ -33,42 +33,36 @@ const login = async (req, res) => {
 }
 
 const userUpdate = async (req, res) => {
-    const { id,email, oldPassword, newPassword } = req.body
+    const { id, email, oldPassword, newPassword } = req.body
     if (!email) {
         res.status(400).json({
             status: 'Enter The Data'
         })
     }
-    if (email && (!oldPassword && !newPassword)) {
+    if (email) {
         try {
-            var userData=await auth.findOneAndUpdate({ _id:id }, { email })
-            res.status(200).json({
-                status:userData
-            })
+            var userData = await auth.findOneAndUpdate({ _id: id }, { email })
+            if (email && (!oldPassword && !newPassword)) {
+                res.status(200).json({
+                    status: 'update'
+                })
+            } else {
+                const checkPassword = await decript_Password(oldPassword, userData.password)
+                if (checkPassword) {
+                    const encriptPassword = await encript_Password(newPassword)
+                    await auth.findOneAndUpdate({ _id: id }, { password: encriptPassword })
+                    res.status(200).json({
+                        status: 'update'
+                    })
+                } else {
+                    res.status(400).json({
+                        status: 'Error'
+                    })
+                }
+            }
         } catch {
             res.status(400).json({
-                status: 'Error'
-            })
-        }
-    }
-    if(email && oldPassword && newPassword){
-        try{
-            const checkPassword=await decript_Password(oldPassword,userData.password)
-            console.log(checkPassword)
-            if(checkPassword){
-                const encriptPassword=await encript_Password(newPassword)
-                await auth.findOneAndUpdate({ _id:id }, { password:encriptPassword })
-                res.status(200).json({
-                    status:'update'
-                })
-            }else{
-                res.status(400).json({
-                    status: 'Error'
-                })
-            }
-        }catch{
-            res.status(400).json({
-                status: 'Error'
+                status: 'Errorr'
             })
         }
     }

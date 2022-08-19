@@ -1,23 +1,30 @@
 //imports
-const expres = require('express')
-const app = expres()
+const express = require('express')
+const app = express()
 const connectivity = require('./db/connectivity')
 require('dotenv').config()
 const {userAuthorisation}=require('./middleware/userAuthorisation')
 const {adminAuthorisation}=require('./middleware/adminAuthorisation')
+const uploadfile=require('express-fileupload')
 const cors=require('cors')
 
 
 
-//routes
+//middleware function
 app.use(cors())
-app.use(expres.json())
+app.use(express.static('./public'))
+app.use(uploadfile())
+app.use(express.json())
+
+
 //product api
 app.use('/comfysloth/api', require('./routers/productDataApi/Data'))
 //user auth api
 app.use('/comfysloth/api/auth', require('./routers/authentication'))
 //user authorisation middleware
 app.use('/comfysloth/api/user/authorisation',userAuthorisation, require('./routers/authorisation/userAuthorisation'))
+
+
 //admin auth api
 app.use('/comfysloth/api/auth/admin',require('./routers/admin/adminAuth'))
 //admin authorisation middleware
