@@ -4,7 +4,6 @@ const app = express()
 const connectivity = require('./db/connectivity')
 require('dotenv').config()
 const {userAuthorisation}=require('./middleware/userAuthorisation')
-const {adminAuthorisation}=require('./middleware/adminAuthorisation')
 const uploadfile=require('express-fileupload')
 const cors=require('cors')
 
