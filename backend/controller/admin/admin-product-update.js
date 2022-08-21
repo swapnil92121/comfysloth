@@ -7,7 +7,7 @@ const updateProduct = async (req, res) => {
     const { id } = req.params
     try {
         const {image}=req.files
-        const imgPath=path.join(__dirname,`../../public/upload${image.name}`)
+        const imgPath=path.join(__dirname,`../../public/upload/${image.name}`)
         await image.mv(imgPath)
         //await comfyslothData.updateOne({_id:id},req.body)
         //await comfysloth_Single_Data.updateOne({_id:id},req.body)
