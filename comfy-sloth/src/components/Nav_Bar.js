@@ -38,7 +38,6 @@ export const Nav_Bar = () => {
                             <Link to={`/`} style={{ textDecoration: 'none', color: 'black' }}><li>Home</li></Link>
                             <Link to={`/about`} style={{ textDecoration: 'none', color: 'black' }}><li>About</li></Link>
                             <Link to={`/products`} style={{ textDecoration: 'none', color: 'black' }}><li>Products</li></Link>
-                            <Link to={`/admin/login`} style={{ textDecoration: 'none', color: 'black' }}><li>Admin</li></Link>
                             {auth && <Link to={auth && `/checkout`} style={{ textDecoration: 'none', color: 'black' }}><li>{auth && 'Checkout'}</li></Link>}
                         </ul>
                     </li>

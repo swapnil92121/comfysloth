@@ -4,7 +4,6 @@ import { configureStore } from '@reduxjs/toolkit'
 import { Provider } from 'react-redux'
 import fetchDataReducer from './reducer/fetchDataReducer'
 import authReducer from './reducer/auth'
-import adminReducer from './reducer/admin'
 import { App } from "./App";
 
 
@@ -12,8 +11,7 @@ import { App } from "./App";
 const store = configureStore({
   reducer: {
     fetchData: fetchDataReducer,
-    auth: authReducer,
-    admin: adminReducer
+    auth: authReducer
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
